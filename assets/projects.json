@@ -79,5 +79,14 @@
         "raw_readme":"https://raw.githubusercontent.com/DhvanilP/Full-Screen-for-Android/master/README.md",
         "github_link":"https://github.com/DhvanilP/Full-Screen-for-Android",
         "web_link":"https://dhvanilp.github.io/Full-Screen-for-Android/"
+    },
+    {
+        "id":"10",
+        "type":"nothing",
+        "name":"Unix-mini-project",
+        "small_desc":" The Game of Tiles is a puzzle played on a square, two-dimensional board which can be of dimensions from 3x3 to 9x9 with numbered tiles that slide. The goal of this puzzle is to arrange the board’s tiles from smallest to largest, left to right, top to bottom, with an empty space in board’s bottom-right corner.",
+        "raw_readme":"https://raw.githubusercontent.com/DhvanilP/Unix-mini-project/master/README.md",
+        "github_link":"https://github.com/DhvanilP/Unix-mini-project",
+        "web_link":"https://dhvanilp.github.io/Unix-mini-project/"
     }
 ]
