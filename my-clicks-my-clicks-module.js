@@ -10383,7 +10383,7 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div class=\"black-box\">\n        <!-- this is to write over the background but stay behind the mouse animation -->\n    </div>\n    <div class=\"container-fluid photos-main\">\n        <h1>Some of My Clicks</h1>\n        <p class=\"page-description text-center\">All on phone :) </p>\n        <div class=\"tz-gallery\">\n            <div class=\"row\">\n                <div class=\"col-sm-6 col-md-4 col-lg-3\" *ngFor=\"let photo of PHOTOS\">\n                    <a class=\"lightbox\" href=\"{{photo.source}}\">\n                        <img src=\"{{photo.thumbnail}}\" alt=\"Bridge\">\n                    </a>\n                </div>  \n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div>\n    <div\n        class=\"black-box\"><!-- this is to write over the background but stay behind the mouse animation -->\n    </div>\n    <div class=\"container-fluid photos-main\">\n        <h1>Some of My Clicks</h1>\n        <p class=\"page-description text-center\">All clicks available on\n            <a href=\"https://www.flickr.com/photos/158562292@N06/\" target=\"_blank\">Flickr</a>\n        </p>\n        <div class=\"tz-gallery\">\n            <div class=\"row\">\n                <div *ngFor=\"let photo of PHOTOS\" class=\"col-sm-6 col-md-4 col-lg-3\">\n                    <a class=\"lightbox\" href=\"{{photo.source}}\">\n                        <img src=\"{{photo.thumbnail}}\" alt=\"Bridge\">\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
