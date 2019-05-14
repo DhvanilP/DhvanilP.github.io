@@ -34,11 +34,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactComponent", function() { return ContactComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
 
 
 var ContactComponent = /** @class */ (function () {
-    function ContactComponent() {
+    function ContactComponent(titleService) {
+        this.titleService = titleService;
+        this.setTitle('Contact | DHP');
     }
+    ContactComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
+    };
     ContactComponent.prototype.ngOnInit = function () {
     };
     ContactComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -47,7 +54,7 @@ var ContactComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./contact.component.html */ "./src/app/contact/contact.component.html"),
             styles: [__webpack_require__(/*! ./contact.component.sass */ "./src/app/contact/contact.component.sass")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
     ], ContactComponent);
     return ContactComponent;
 }());

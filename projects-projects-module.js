@@ -5184,16 +5184,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var showdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! showdown */ "./node_modules/showdown/dist/showdown.js");
-/* harmony import */ var showdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(showdown__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var showdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! showdown */ "./node_modules/showdown/dist/showdown.js");
+/* harmony import */ var showdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(showdown__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 // import * as $ from 'jquery';
 
 var ProjectsComponent = /** @class */ (function () {
-    function ProjectsComponent(httpService) {
+    function ProjectsComponent(httpService, titleService) {
         this.httpService = httpService;
+        this.titleService = titleService;
+        this.setTitle('Projects | DHP');
     }
     ProjectsComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -5205,6 +5209,9 @@ var ProjectsComponent = /** @class */ (function () {
         }, function () {
             console.log('fetched successfully projects');
         });
+    };
+    ProjectsComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
     };
     ProjectsComponent.prototype.readmeFetch = function (project) {
         var _this = this;
@@ -5218,7 +5225,7 @@ var ProjectsComponent = /** @class */ (function () {
         }, function (err) {
             console.log(err.message);
         }, function () {
-            var converter = new showdown__WEBPACK_IMPORTED_MODULE_3__["Converter"]();
+            var converter = new showdown__WEBPACK_IMPORTED_MODULE_4__["Converter"]();
             var text = _this.Readme;
             _this.ReadmeHTML = converter.makeHtml(text);
             console.log('______________________________________');
@@ -5232,7 +5239,7 @@ var ProjectsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./projects.component.html */ "./src/app/projects/projects.component.html"),
             styles: [__webpack_require__(/*! ./projects.component.sass */ "./src/app/projects/projects.component.sass")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"]])
     ], ProjectsComponent);
     return ProjectsComponent;
 }());

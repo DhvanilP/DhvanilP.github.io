@@ -10411,15 +10411,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
 
 var MyClicksComponent = /** @class */ (function () {
-    function MyClicksComponent(httpService) {
+    function MyClicksComponent(httpService, titleService) {
         this.httpService = httpService;
+        this.titleService = titleService;
+        this.setTitle('My-Clicks | DHP');
     }
     MyClicksComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -10429,11 +10433,14 @@ var MyClicksComponent = /** @class */ (function () {
         }, function (err) {
             console.log(err.message);
         }, function () {
-            jquery__WEBPACK_IMPORTED_MODULE_3__(document).ready(function () {
+            jquery__WEBPACK_IMPORTED_MODULE_4__(document).ready(function () {
                 // alert('The doc is ready;');
                 baguetteBox.run('.tz-gallery');
             });
         });
+    };
+    MyClicksComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
     };
     MyClicksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -10441,7 +10448,7 @@ var MyClicksComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./my-clicks.component.html */ "./src/app/my-clicks/my-clicks.component.html"),
             styles: [__webpack_require__(/*! ./my-clicks.component.sass */ "./src/app/my-clicks/my-clicks.component.sass")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["Title"]])
     ], MyClicksComponent);
     return MyClicksComponent;
 }());

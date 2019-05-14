@@ -34,11 +34,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutComponent", function() { return AboutComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
 
 
 var AboutComponent = /** @class */ (function () {
-    function AboutComponent() {
+    function AboutComponent(titleService) {
+        this.titleService = titleService;
+        this.setTitle('About | DHP');
     }
+    AboutComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
+    };
     AboutComponent.prototype.ngOnInit = function () {
     };
     AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -47,7 +54,7 @@ var AboutComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./about.component.html */ "./src/app/about/about.component.html"),
             styles: [__webpack_require__(/*! ./about.component.sass */ "./src/app/about/about.component.sass")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
     ], AboutComponent);
     return AboutComponent;
 }());

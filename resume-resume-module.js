@@ -34,12 +34,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResumeComponent", function() { return ResumeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
 
 
 var ResumeComponent = /** @class */ (function () {
-    function ResumeComponent() {
+    function ResumeComponent(titleService) {
+        this.titleService = titleService;
+        this.setTitle('Resume | DHP');
     }
     ResumeComponent.prototype.ngOnInit = function () {
+    };
+    ResumeComponent.prototype.setTitle = function (newTitle) {
+        this.titleService.setTitle(newTitle);
     };
     ResumeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -47,7 +54,7 @@ var ResumeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./resume.component.html */ "./src/app/resume/resume.component.html"),
             styles: [__webpack_require__(/*! ./resume.component.sass */ "./src/app/resume/resume.component.sass")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["Title"]])
     ], ResumeComponent);
     return ResumeComponent;
 }());
