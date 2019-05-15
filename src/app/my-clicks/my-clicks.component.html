@@ -1,0 +1,20 @@
+<div>
+    <div
+        class="black-box"><!-- this is to write over the background but stay behind the mouse animation -->
+    </div>
+    <div class="container-fluid photos-main">
+        <h1>Some of My Clicks</h1>
+        <p class="page-description text-center">All clicks available on
+            <a href="https://www.flickr.com/photos/158562292@N06/" target="_blank">Flickr</a>
+        </p>
+        <div class="tz-gallery">
+            <div class="row">
+                <div *ngFor="let photo of PHOTOS" class="col-sm-6 col-md-4 col-lg-3">
+                    <a class="lightbox" href="{{photo.source}}">
+                        <img src="{{photo.thumbnail}}" alt="Bridge">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

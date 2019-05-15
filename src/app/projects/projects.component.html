@@ -1,0 +1,78 @@
+<!-- <button type="button" class="btn btn-outline-secondary mr-2" placement="top"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
+  Popover on top
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="right"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">
+  Popover on right
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">
+  Popover on bottom
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="left"
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">
+  Popover on left
+</button> -->
+
+<!-- <div [innerHTML]="ReadmeHTML">
+</div> -->
+
+<div>
+  <div class="black-box">
+      <!-- this is to write over the background but stay behind the mouse animation -->
+  </div>
+  <div class="container-fluid projects-main">
+      <h1>Some of My Projects</h1>
+      <p class="page-description text-center">All projects available on <a href="http://github.com/dhvanilp" target="_blank">GitHub</a></p>
+
+      <div class="container-fluid">
+        <div class="row row-flex">        
+          <div class=" col col-sm-12 col-md-6 col-lg-4 proj-class" *ngFor="let project of PROJECTS">  
+            <div class="card content">
+              <div class="card-body">
+              <h4 class="card-title">{{project.name}}</h4>
+              <p class="card-text">{{project.small_desc}}</p>
+              <br>
+                <div class="links">
+                  <button type="button" class="btn btn-primary readmeBtn" (click)="readmeFetch(project)" data-target="#myModal">
+                    Readme
+                  </button>
+                  <a href="{{project.github_link}}" target="_blank" class="card-link">View Code</a>
+                  <a href="{{project.web_link}}" target="_blank" class="card-link">Web</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+                <!-- <h2>Modal Example</h2>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+            
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+            
+                    <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        <div class="modal-body" [innerHTML]="ReadmeHTML">   
+                        </div>
+                          <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+          </div>
+      </div>
+    </div>
+              
+    </div>
+</div>
